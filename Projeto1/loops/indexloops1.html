@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //".length"= Retorna um numero igual ao numero de itens do vetor
+        // break = quebra o loop
+        // continue = pula o valor atual
+
+        for (let i = 0; i < 10; i++) {//for
+            console.log(i);
+            
+        }
+
+        let numeros = [1, 2, 3, 4, 5];
+        for(let valor of numeros){//for of
+            console.log(valor);
+        }
+
+        let num = 1;
+        while(num < 10){//while
+            console.log("valor" + num);
+            num += 2;
+        }
+
+        do{//do while
+            console.log(num);
+            num ++;
+        }
+        while(num < 10);
+
+    </script>
+    
+</body>
+</html>

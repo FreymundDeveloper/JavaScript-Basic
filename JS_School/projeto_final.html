@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto</title>
+</head>
+<body>
+    <script>
+        // Projeto Final
+        function testeFinal(umString, umNumero){
+
+            let retr;
+
+            switch (umString) {
+                case "mundojs":
+                    console.log("MundoJS");
+
+                    retr = umNumero;
+                    break;
+
+                case "soma":
+
+                    retr = ((umNumero/2)+(umNumero*umNumero));
+                    break; 
+
+                case "vetor":
+
+                    let vetor = [];
+
+                    for(let i = 0; i < 5; i++){
+
+                        vetor[i] = umNumero + (i * 2);
+
+                    }
+
+                    retr = vetor;
+                    break;
+
+                case "booleano":
+
+                let vetor2 = [];
+                let soma = 0;
+
+                for(let i = 0; i < 5; i++){
+
+                    vetor2[i] = umNumero + (i * 2);
+
+                    soma = vetor2[i] + soma
+                }
+
+                if(soma > 35){
+                    retr = true
+                }
+                else{
+                    retr = false
+                }
+                
+                break;
+            
+                default:
+                    retr = -1;
+
+            }
+
+            return retr;
+        }
+    </script>
+    
+</body>
+</html>
