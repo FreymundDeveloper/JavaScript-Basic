@@ -1,1 +1,1 @@
-Códigos e projeto de JS-Básico(Curso velhos, muita coisa desatualizada).
+Códigos e projetos de JS-Básico(Cursos velhos, muita coisa desatualizada).
