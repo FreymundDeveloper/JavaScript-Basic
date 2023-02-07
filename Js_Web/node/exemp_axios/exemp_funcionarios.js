@@ -16,7 +16,7 @@ axios.get(url).then(response => {
     }
     console.log(menorSalario)
 
-    //ou
+    //ou: 
 
     const chineses = f => f.pais === 'China'
     const mulheres = f => f.genero === 'F'
