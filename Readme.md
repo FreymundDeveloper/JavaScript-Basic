@@ -1,1 +1,18 @@
-Códigos e projetos de JS-Básico(Cursos velhos, muita coisa desatualizada).
+Simple codes and projects based on JavaScript(Developed as a study).
+Some tecnologies used:
+
+* JavaScript(Obviously);
+* HTML;
+* CSS;
+* JQuery;
+* Express;
+* Node.
+
+Main applications present in the repository.
+
+* /ProjetoJs_Calculadora: A Simple calculator, made with: Html, Css and JS;
+* /ProjetoJs_JogoDaVelha: A game of tic-tac-toe;
+* /Js_Web/node: A simple route mapping, made with Express;
+* /XLSX_Orderer: Manipulation of XML files with Node's "excelJS" library.
+
+OBS: Sorry for the lack of use of English.
