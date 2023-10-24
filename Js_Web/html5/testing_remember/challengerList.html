@@ -1,0 +1,51 @@
+<h1>List Challenger</h1>
+<ul class="tree">
+    <li>
+        <span class="folder">Back-End</span>
+        <ul>
+            <li>
+                <span class="folder">app</span>
+                <ul>
+                    <li>produdo.js</li>
+                    <li>usuario.js</li>
+                    <li>venda.js</li>
+                </ul>
+            </li>
+
+            <li>
+                <span class="folder">config</span>
+                <ul>
+                    <li>banco.js</li>
+                    <li>usuario.js</li>
+                    <li>servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+
+    <li>
+        <span class="folder">Front-End</span>
+        <ul>
+            <li>
+                <span class="folder">public</span>
+                <ul>
+                    <li>app.css</li>
+                    <li>app.js</li>
+                    <li>index.html</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<script>
+    document.querySelectorAll('.folder').forEach(folder => {
+        folder.onclick = function(e) {
+          const ul = folder.nextElementSibling
+          ul.style.display = ul.style.display === 'none' ? 'block' : 'none'
+        };
+    });
+</script>
+
+
+<!--<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">-->

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        
+        <title>Remembering HTML</title>
+
+        <style>
+            #content {
+                padding: 30px 0px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>Tests</h1>
+        </header>   
+
+        <nav>
+            <a href="testing_remember/challengerList.html">Challenger List</a> 
+            <a href="testing_remember/challengerList.html">Challenger Slider</a> 
+            <a href="testing_remember/challengerList.html">Challenger Video</a> 
+        </nav> 
+        <section id="content"></section>
+
+        <footer>
+            Test and remembering html basic
+        </footer>
+
+        <script>
+            document.querySelectorAll('a').forEach(link => {
+                const content = document.getElementById('content')
+
+                link.onclick = function(e) {
+                    e.preventDefault()
+                    fetch(link.href)
+                        .then(resp => resp.text())
+                        .then(html => {     // Dynamic tag calls renders just the html and css. You need to call the JS separately
+                            content.innerHTML = html
+                            const scripts = content.querySelectorAll('script')
+                            scripts.forEach(script => {
+                                const newScript = document.createElement('script')
+                                newScript.textContent = script.textContent
+                                document.body.appendChild(newScript) // The JS call will generate a child branch of the current Tag script
+                            })
+                        })
+                }
+            }) //To avoid this problem, just use js files external to html <... src="./file.js">
+        </script>
+    </body>
+</html>
