@@ -1,7 +1,7 @@
 <h1>Challenger Video</h1>
 
 <video id="video" controls autoplay controlsList="nodownload" >
-    <source src="..\mp4\2023-10-02 00-21-02.mkv" type="video/mp4">
+    <source src="..\mp4\2023-10-02 00-21-02.mkv" type="video/mp4"><!--Insert some video path-->
     Content Hear
 </video>
 
@@ -29,29 +29,33 @@
 
     .progress > div {
         background-color: rgb(3, 3, 92);
-        color: grey;
+        color: rgb(43, 152, 35);
         height: 100%;
-        text-align: right;
+        text-align: left;
         font-size: 14px;
         width: 0%;
     }
 </style>
 
 <script>
-    const video = document.getElementById('video')
-    const play = document.getElementById('play')
-    const stop = document.getElementById('stop')
-    const progress = document.getElementById('progressBar')
+    (function() {
+        const video = document.getElementById('video')
+        const play = document.getElementById('play')
+        const stoping = document.getElementById('stop')
+        const progress = document.getElementById('progressBar')
 
-    play.addEventListener('click', () => {
-        if (video.paused) video.play()
-    })
+        play.addEventListener('click', () => {
+            if (video.paused) video.play()
+        })
 
-    stop.addEventListener('click', () => {
-        video.pause()
-    })
+        stoping.addEventListener('click', () => {
+            video.pause()
+        })
 
-    video.addEventListener('timeupdate', () => {
-        progress.style.width = ((video.currentTime / video.duration) * 100) + '%'
-    })
+        video.addEventListener('timeupdate', () => {
+            const percent = (video.currentTime / video.duration) * 100
+            progress.style.width = percent + '%'
+            progress.innerHTML = percent.toFixed(1) + '%'
+        })
+    })()
 </script>
