@@ -1,0 +1,57 @@
+<h1>Challenger Video</h1>
+
+<video id="video" controls autoplay controlsList="nodownload" >
+    <source src="..\mp4\2023-10-02 00-21-02.mkv" type="video/mp4">
+    Content Hear
+</video>
+
+<div id="myVideo" class="progress">
+    <div id="progressBar"></div>
+</div>
+
+<div>
+    <button id="play">Play</button>
+    <button id="stop">Stop</button>
+</div>
+
+<style>
+    video {
+        width: 600px;
+        height: 250px;
+    }
+
+    .progress {
+        height: 20px;
+        width: 300px;
+        border: solid 1px rgb(33, 30, 30);
+        margin: 20px;
+    }
+
+    .progress > div {
+        background-color: rgb(3, 3, 92);
+        color: grey;
+        height: 100%;
+        text-align: right;
+        font-size: 14px;
+        width: 0%;
+    }
+</style>
+
+<script>
+    const video = document.getElementById('video')
+    const play = document.getElementById('play')
+    const stop = document.getElementById('stop')
+    const progress = document.getElementById('progressBar')
+
+    play.addEventListener('click', () => {
+        if (video.paused) video.play()
+    })
+
+    stop.addEventListener('click', () => {
+        video.pause()
+    })
+
+    video.addEventListener('timeupdate', () => {
+        progress.style.width = ((video.currentTime / video.duration) * 100) + '%'
+    })
+</script>

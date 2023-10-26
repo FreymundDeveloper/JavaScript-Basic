@@ -1,0 +1,89 @@
+<h1>Slider Challenger</h1>
+<div class="slider-container">
+    <div class="slider">
+        <p class="slide"><img src="https://cdn.folhape.com.br/img/pc/1100/1/dn_arquivo/2023/06/whatsapp-image-2023-06-15-at-072046.jpeg" alt="Generic Image 1"></p>
+        <p class="slide"><img src="https://i.dailymail.co.uk/i/pix/2014/07/30/article-2710390-201E785500000578-528_634x818.jpg" alt="Generic Image 2"></p>
+        <p class="slide" id="text">
+            <img src="https://www.giantfreakinrobot.com/wp-content/uploads/2013/09/arnold-schwarzenegger-is-mad-at-you.jpg" alt="Generic Image 3" align="left">
+            Evil Arnold is a multifaceted individual with a unique blend of qualities and interests. With a strong
+            work ethic and unwavering determination, he consistently pursues his goals with vigor. Whether in
+            his personal life or professional endeavors, Arnold's commitment to excellence sets him apart from
+            the crowd.
+        </p>
+    </div>
+</div>
+
+<style>
+    img {
+        width: 300px;
+        height: 200px;
+    }
+
+    #text {
+        height: 50;
+    }
+
+    #text img {
+        width: 150px;
+        height: 100px;
+        margin-right: 5px;
+    }
+
+    .slider-container {
+        width: 800px;
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .slider {
+        display: flex;
+    }
+
+    .slide {
+        position: absolute;
+        display: none;
+        margin: 10px;
+        width: 400px;
+        height: 300px;
+    }
+</style>
+
+<script>
+    function moveSlide(element, start, end, step, callback) {
+        const newStart = start - step
+        if (newStart >= end) {
+            element.style.left = newStart + 'px'
+            setTimeout(() => moveSlide(element, newStart, end, step, callback), 7)
+        }
+        else {
+            callback()
+        }
+    }
+
+    function slider() {
+        const elements = document.querySelectorAll('.slider p')
+        const slides = Array.from(elements)
+        showSlide(slides, slides[0])
+    }
+
+    function showSlide(slides, slide) {
+        slide.style.display = 'block'
+
+        const start = innerWidth
+        const end = -slide.clientWidth
+
+        slide.style.left = `${start}px`
+
+        moveSlide(slide, start, end, 5, () => {
+            slide.style.display = 'none'
+            showSlide(slides, getNext(slides, slide))
+        })
+    }
+
+    function getNext(list, current) {
+        const i = list.indexOf(current) + 1
+        return i < list.length ? list[i] : list[0]
+    }
+
+    slider()
+</script>
