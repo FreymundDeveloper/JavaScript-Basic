@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Remembering CSS</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <style>
+        html {
+            height: 100%;
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Oswald', sans-serif;
+            background-color: lightgray;
+            height: 100%;
+        }
+        
+        .conteudo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100%;
+        }
+        
+        .menu-principal {
+            min-width: 400px;
+            text-align: center;
+        }
+        
+        .menu-principal h1 {
+            background: #333;
+            color: #fff;
+            border-bottom: solid 5px #4faddb;
+            padding: 15px 0px;
+            margin: 0;
+        }
+        
+        .menu-principal nav {
+            display: inline-block;
+            background-color: #fff;
+            min-width: 198px;
+            border-bottom: solid 5px #4faddb;
+        }
+        
+        .menu-principal a {
+            display: block;
+            padding: 10px 0px;
+            text-decoration: none;
+            color: #222;
+            font-size: 1.2em;
+        }
+        
+        .menu-principal a:hover {
+            background-color: rgba(79, 173, 219, .4);
+        }
+
+        .gif-css {
+            background: #333;
+            min-width: 400px;
+            text-align: center;
+            padding: 4.5%;
+        }
+
+        .gif-css img {
+            border: 2px solid #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="conteudo">
+        <div class="menu-principal">
+            <h1>Remembering CSS 3</h1>
+            <nav>
+                <a href="testing_remember/cardChallenger.html">Card Challenger</a>
+            </nav>
+
+            <nav>
+                <a href="testing_remember/flexboxChallenger.html">Flex Box Challenger</a>
+            </nav>
+
+            <nav>
+                <a href="testing_remember/menuChallenger.html">Menu Challenger</a>
+            </nav>
+        </div>
+
+        <div class="gif-css">
+            <img src="http://files.cod3r.com.br/curso-web/css1.gif" alt="CSS" />
+        </div>
+    </div>
+</body>
+
+</html>
