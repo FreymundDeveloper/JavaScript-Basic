@@ -51,7 +51,7 @@
             border-radius: 15%;
         }
 
-        .menu a:hover {
+        .menu a:hover, .menu a.selected {
             background-color: darkblue;
         }
 
@@ -93,34 +93,34 @@
 <body>
     <header>
         <div class="soon">
-            <a href="#inicio">
-                <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
+            <a href="#start-soon">
+                <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="soon" />
             </a>
         </div>
 
         <nav class="menu">
             <ul>
                 <li>
-                    <a href="#inicio">Start</a>
+                    <a href="#start">Start</a>
                 </li>
                 
                 <li>
-                    <a href="#cursos">Courses</a>
+                    <a href="#courses">Courses</a>
                 </li>
 
                 <li>
-                    <a href="#sobre">About</a>
+                    <a href="#about">About</a>
                 </li>
 
                 <li>
-                    <a href="#contato">Contact</a>
+                    <a href="#contact">Contact</a>
                 </li>
             </ul>
         </nav>
 
         <aside class="authenticate">
             <a href="#login">Login</a>
-            <a href="#registar" class="button-draft">Sign In</a>
+            <a href="#sign-in" class="button-draft">Sign In</a>
         </aside>
 
         <button class="menu-toggle">
@@ -129,7 +129,17 @@
     </header>
 
     <script>
-        // ...
+        window.onhashchange = function(e) {
+            const oldURL = e.oldURL.split('#')[1]
+            const newURL = e.newURL.split('#')[1]
+            console.log(oldURL, newURL)
+
+            const oldMenu = document.querySelector(`.menu a[href='#${oldURL}']`);
+            const newMenu = document.querySelector(`.menu a[href='#${newURL}']`);
+
+            oldMenu && oldMenu.classList.remove('selected')
+            newMenu && newMenu.classList.add('selected')
+        }
     </script>
 </body>
 
