@@ -7,40 +7,125 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
-        /* ... */
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            background-color: gray;
+            border-bottom: solid 5px #4faddb;
+        }
+
+        header {
+            background-color: black;
+            display: flex;
+            align-items: center;
+        }
+
+        img{
+            width: 180px;
+            height: 50px;
+            padding: 5px;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 0.1px;
+        }
+
+        .menu-toggle {
+            display: none;
+            margin-right: 10px;
+            padding: 3px;
+        }
+
+        .menu {
+            margin-left: 5px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px;
+            border-radius: 15%;
+        }
+
+        .menu a:hover {
+            background-color: darkblue;
+        }
+
+        .authenticate {
+            margin-left: auto;
+            margin-right: 10px;
+        }
+
+        .authenticate a {
+            border-radius: 35%;
+            text-decoration: none;
+            color: #fff;
+            padding: 10px;
+            border: 1px solid #fff;
+        }
+
+        .authenticate a:hover {
+            background-color: darkred;
+        }
+
+        @media(max-width: 640px) {
+            .authenticate a {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex
+            }
+        }
+
+        @media(max-width: 525px) {
+            .menu {
+                display: none
+            }
+        }
     </style>
 </head>
 
 <body>
-    <header class="cabecalho">
-        <div class="logo">
+    <header>
+        <div class="soon">
             <a href="#inicio">
                 <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
             </a>
         </div>
-        <button class="menu-toggle">
-            <i class="fa fa-lg fa-bars"></i>
-        </button>
+
         <nav class="menu">
             <ul>
                 <li>
                     <a href="#inicio">Start</a>
                 </li>
+                
                 <li>
                     <a href="#cursos">Courses</a>
                 </li>
+
                 <li>
                     <a href="#sobre">About</a>
                 </li>
+
                 <li>
                     <a href="#contato">Contact</a>
                 </li>
             </ul>
         </nav>
-        <aside class="autenticacao">
+
+        <aside class="authenticate">
             <a href="#login">Login</a>
-            <a href="#registar" class="botao destaque">Sign In</a>
+            <a href="#registar" class="button-draft">Sign In</a>
         </aside>
+
+        <button class="menu-toggle">
+            <i class="fa fa-lg fa-bars"></i>
+        </button>
     </header>
 
     <script>
