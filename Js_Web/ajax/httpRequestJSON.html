@@ -11,6 +11,59 @@
     <h1>States</h1>
 
     <script>
-        // ...
+        function ajax(config) {
+            const xhr = new XMLHttpRequest();
+            xhr.open(config.method, config.url, true)
+
+            xhr.onload = event => {
+                if (xhr.status === 200) config.sucess(xhr.response);
+                else if (xhr.status >= 400) {
+                    config.fail({
+                        code: xhr.status,
+                        text: xhr.statusText
+                    });
+                }
+            }
+            
+            xhr.send();
+        }
+
+        function createTable(states) {
+            const lines = states.map(states => {
+                const tableDataId = document.createElement('td');
+                tableDataId.innerHTML = states.id;
+
+                const tableDataName = document.createElement('td');
+                tableDataName.innerHTML = states.nome;
+
+                const tableDataAcronym = document.createElement('td');
+                tableDataAcronym.innerHTML = states.sigla;
+
+                const tableRow = document.createElement('tr');
+
+                tableRow.appendChild(tableDataId);
+                tableRow.appendChild(tableDataName);
+                tableRow.appendChild(tableDataAcronym);
+
+                return tableRow;
+            });
+
+            const table = document.createElement('table');
+            lines.forEach(line => table.appendChild(line));
+            document.body.appendChild(table);
+        }
+
+        ajax({
+            url: "data/states.json",
+            method: "get",
+
+            sucess(response) {
+                const states = JSON.parse(response);
+                createTable(states);
+            },
+            fail(errorFound) {
+                document.body.appendChild(document.createTextNode(`${errorFound.code}: ${errorFound.text}`));
+            }
+        });
     </script>
 </body>
