@@ -11,6 +11,36 @@
     <h1>States</h1>
 
     <script>
-        // ...
+        function ajax(config) {
+            const xhr = new XMLHttpRequest();
+            xhr.open(config.method, config.url, true);
+
+            xhr.onreadystatechange = event => {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) config.sucess(xhr.responseXML);
+                    else if (xhr.status >= 400) {
+                        config.fail({
+                            code: xhr.status,
+                            text: xhr.statusText
+                        });
+                    }
+                }
+            }
+            xhr.send();
+        }
+
+        ajax({
+            url: "data/states.xml",
+            method: "get",
+
+            sucess(response) {
+                const states = response.getElementsByTagName('estado');
+                const itens = Array.from(states).reduce((html, estado) => html + `<li>${estado.attributes.nome.value}</li>`, ''); // Pt-br becouse of the xml file
+                document.body.insertAdjacentHTML('beforeend', `<ul>${itens}</ul>`);
+            },
+            fail(errorFound) {
+                document.body.appendChild(document.createTextNode(`${errorFound.code}: ${errorFound.text}`));
+            }
+        });
     </script>
 </body>
