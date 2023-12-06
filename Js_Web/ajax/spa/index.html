@@ -20,11 +20,29 @@
 
 <body class="content">
     <nav>
-        <a href wm-link="series.html" wm-destino=".page">Series</a> |
-        <a href wm-link="langauges.html" wm-destino=".page">Langauges</a>
+        <a href wm-link="series.html" wm-destination=".page">Series</a> |
+        <a href wm-link="languages.html" wm-destination=".page">Languages</a>
     </nav>
     <div class="page"></div>
     <script>
-        // ...
+        function navigateInAjax(url, selected) {
+            if (!url || !selected) return;
+            const element = document.querySelector(selected);
+            fetch(url)
+                .then(response => response.text())
+                .then(html => {
+                    element.innerHTML = html;
+                });
+        }
+
+        document.querySelectorAll('[wm-link]').forEach(link => {
+            const url = link.attributes['wm-link'].value;
+            const selectDestination = link.attributes['wm-destination'].value;
+
+            link.onclick = event => {
+                event.preventDefault();
+                navigateInAjax(url, selectDestination);
+            }
+        });
     </script>
 </body>
