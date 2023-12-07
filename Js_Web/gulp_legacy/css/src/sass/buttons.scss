@@ -1,0 +1,16 @@
+button {
+    font-size: $average-size;
+    border-radius: 20px;
+    padding: 10px 20px;
+    outline: none;
+}
+
+.button-draft {
+    background-color: $color-bg-red;
+    color: $color-white;
+}
+
+.button-sucess {
+    background-color: $color-bg-green;
+    color: $color-white;
+}

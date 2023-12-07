@@ -1,5 +1,5 @@
 aside.menu {
-    background-color: $cor-bg-escura;
+    background-color: $color-bg-dark;
     padding: 10px;
 }
 
@@ -9,14 +9,14 @@ aside.menu a {
     color: #FFF;
     margin: 10px 0px;
     padding: 5px; 
-    font-size: $tamanho-medio;
+    font-size: $average-size;
 }
 
 aside.menu a:hover {
-    background-color: $cor-primaria;
+    background-color: $color-primary;
 }
 
-@media(max-width: $largura-tablet) {
+@media(max-width: $width-tablet) {
     aside.menu {
         display: flex;
         justify-content: flex-start;
@@ -29,7 +29,7 @@ aside.menu a:hover {
     }
 }
 
-@media(max-width: $largura-celular) {
+@media(max-width: $width-cell) {
     aside.menu {
         justify-content: center;
     }
