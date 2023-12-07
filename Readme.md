@@ -6,6 +6,7 @@ Some tecnologies used:
 * TypeScript;
 * HTML;
 * CSS;
+* SASS;
 * JQuery;
 * Express;
 * Ajax;
