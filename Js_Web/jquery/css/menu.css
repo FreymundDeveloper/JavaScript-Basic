@@ -10,8 +10,9 @@ body {
 }
 
 .main-menu{
-    min-width: 500px;
+    min-width: 200px;
     text-align: center;
+    margin-top: 50px;
 }
 
 .main-menu h1 {
