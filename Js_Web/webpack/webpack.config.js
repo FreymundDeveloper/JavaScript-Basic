@@ -11,6 +11,10 @@ module.exports = {
         filename: 'builder.js',
         path: __dirname + '/public'
     },
+    devServer: {
+        contentBase: "./public",
+        port: 9000
+    },
     optimization: {
         minimize: true,
         minimizer: [
