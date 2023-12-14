@@ -11,6 +11,7 @@ Some tecnologies used:
 * Express;
 * Ajax;
 * Gulp(Legacy version);
+* Webpack;
 * Node.
 
 
@@ -21,6 +22,7 @@ Main applications present in the repository.
 * /Js_Web/node: A simple route mapping, made with Express;
 * /Js_Web/ajax: Simple code manipulation processes through Ajax;
 * /Js_Web/gulp_legacy: Manipulation of legacy Gulp content;
+* /Js_Web/webpack: Basic Webpack builder configuration;
 * /XLSX_Orderer: Manipulation of XML files with Node's "excelJS" library.
 
 ```bash
