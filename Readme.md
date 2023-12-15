@@ -1,4 +1,4 @@
-Simple codes and projects based on JavaScript(Developed as a study).
+Simple codes and projects based on JavaScript and his frameworks(Developed as a study).
 
 Some tecnologies used:
 
@@ -23,6 +23,7 @@ Main applications present in the repository.
 * /Js_Web/ajax: Simple code manipulation processes through Ajax;
 * /Js_Web/gulp_legacy: Manipulation of legacy Gulp content;
 * /Js_Web/webpack: Basic Webpack builder configuration;
+* /Js_Web/jquery: Examples of using the main elements in JQuery manipulation;
 * /XLSX_Orderer: Manipulation of XML files with Node's "excelJS" library.
 
 ```bash
