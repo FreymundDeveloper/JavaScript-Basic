@@ -23,6 +23,35 @@
     <h1>Manipulating Attributes</h1>
     <div wm-clock='1000'></div>
     <script>
-        // ...
+        function Clock(element) {
+            const rightHour = $('<p>').html('0');
+            const buttonLess = $('<button>').html('-');
+            const buttonMore = $('<button>').html('+');
+
+            const $element = $(element);
+            $element.append(rightHour, buttonLess, buttonMore);
+
+            const getCurrentInterval = () => parseInt($element.attr('wm-clock'));
+
+            let timer = null;
+            const start = () => {
+                if (timer) clearInterval(timer);
+                timer = setInterval(() => {
+                    rightHour.html(new Date().toLocaleString('pt-BR'))
+                }, getCurrentInterval())
+            }
+
+            const changeInterval = delta => {
+                const newOne = Math.max(getCurrentInterval() + delta, 1000);
+                $element.attr('wm-clock', newOne);
+                start();
+            }
+
+            buttonLess.click(event => changeInterval(1000));
+            buttonMore.click(event => changeInterval(-1000));
+            start();
+        }
+
+        $('[wm-clock]').each((interation, event) => new Clock(event))
     </script>
 </body>
