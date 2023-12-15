@@ -13,22 +13,24 @@
     <div id='content'></div>
 
     <script>
-        const peolpe = [
-            { name: 'Ana', note: 9.1 },
-            { name: 'Bianca', note: 8.4 },
-            { name: 'Carlos', note: 7.6 },
-            { name: 'Julia', note: 9.7 }
-        ]
-        
-        const table = $('<table>').addClass('people-table');
-        const headerRow = $('<tr>').append($('<th>').text('Name'), $('<th>').text('Note'));
-        table.append(headerRow);
+        $(document).ready(function () { //Good practice 
+            const people = [
+                { name: 'Ana', note: 9.1 },
+                { name: 'Bianca', note: 8.4 },
+                { name: 'Carlos', note: 7.6 },
+                { name: 'Julia', note: 9.7 }
+            ]
+            
+            const table = $('<table>').addClass('people-table');
+            const headerRow = $('<tr>').append($('<th>').text('Name'), $('<th>').text('Note'));
+            table.append(headerRow);
 
-        peolpe.forEach(person => {
-            const row = $('<tr>').append($('<td>').text(person.name), $('<td>').text(person.note));
-            table.append(row);
+            people.forEach(person => {
+                const row = $('<tr>').append($('<td>').text(person.name), $('<td>').text(person.note));
+                table.append(row);
+            });
+
+            $('#content').append(table);
         });
-
-        $('#content').append(table);
     </script>
 </body>
