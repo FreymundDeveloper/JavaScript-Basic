@@ -19,8 +19,27 @@
     <div id="resultOne">?</div>
     <br>
     <input type="text" placeholder="Type and Select">
-    <div id="resultadoTwo">?</div>
+    <div id="resultTwo">?</div>
     <script>
-        // ...
+        const changeDraft = () => $('#divOne').toggleClass('draft');
+
+        $('#divOne').hover(changeDraft, changeDraft);
+        $('#divOne').dblclick(event => $('#divOne').fadeOut(1000).fadeIn(1000));
+
+        $('#divOne').one('mouseenter', event => alert('Boogia!!'));
+
+        $(window).resize(function(event) {
+            const widthValue = $(window).width();
+            const heightValue = $(window).height();
+
+            $('#resultOne').html(`Width: ${widthValue} and Height: ${heightValue}`);
+        });
+
+        $(':input').select(event => {
+            const start = event.target.selectionStart;
+            const end = event.target.selectionEnd;
+
+            $('#resultTwo').html(event.target.value.substring(start, end));
+        })
     </script>
 </body>
