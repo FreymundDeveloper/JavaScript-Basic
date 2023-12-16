@@ -22,6 +22,24 @@
     </div>
 
     <script>
-        // ...
+        (function ($) {
+            $.fn.interpret = function () {
+                const removeKeys = substitution => substitution.substring(2, substitution.length -2);
+                const content = $(this).html();
+                const expressionsWithKeys = content.match(/\{\{.+\}\}/g);
+                const expressions = expressionsWithKeys.map(removeKeys);
+                const result = expressions.map(expression => eval(expression));
+
+                let finalContent = content;
+                for (let index = 0; index < expressionsWithKeys.length; index++) {
+                    finalContent = finalContent.replace(
+                        expressionsWithKeys[index], result[index]
+                    );
+                    $(this).html(finalContent);
+                }
+            }
+        })(jQuery);
+
+        $('div').interpret();
     </script>
 </body>
