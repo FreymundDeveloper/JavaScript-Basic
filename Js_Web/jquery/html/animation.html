@@ -23,6 +23,12 @@
     <div id='animate'>Animate!</div>
 
     <script>        
-        // ...
+        $('button').click(event => {
+            const toggleBase = 1500
+
+            $('#animate').toggle(toggleBase).toggle(toggleBase);
+            $('#animate').fadeToggle(toggleBase).fadeToggle(toggleBase);
+            $('#animate').slideToggle(toggleBase).slideToggle(toggleBase);
+        })
     </script>
 </body>
