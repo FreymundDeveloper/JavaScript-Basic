@@ -1,4 +1,4 @@
-(function () {destiny
+(function () {
     function browseByAjax(hash) {
         if (!hash) return
 
