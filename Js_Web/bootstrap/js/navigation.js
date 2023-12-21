@@ -12,7 +12,11 @@
             .then(response => response.text())
             .then(html => {
                 destiny.innerHTML = html;
-                //eval(html.match(/\<script\>([\s\S]*)\<\/script\>/)[1]);    // Case uses tooltip
+
+                //Case uses tooltip
+                
+                //const result = html.match(/\<script\>([\s\S]*)\<\/script\>/);
+                //if(result && result.length >= 2) eval(result[1]);
             })
     }
 

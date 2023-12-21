@@ -16,3 +16,71 @@
 <p class="lead">
     <a href="https://getbootstrap.com/docs/4.0/components/forms/" target="_black">Official Documentation</a>
 </p>
+
+<div class="card">
+    <div class="card-header">
+        <h5 class="mb-0">
+            Form Example
+        </h5>
+    </div>
+
+    <div class="card-body">
+        <form action="" class="container-fluid">
+            <div class="form-row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Say the name">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-12 col-md-6">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">@</span>
+                            </div>
+                            <input type="email" class="form-control" id="email" placeholder="Say the Email">
+                        </div>
+                        <small class="form-text text-muted">
+                            A email will be send to confirm the sign up
+                        </small>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <label for="favoriteLanguage">Language</label>
+                    <select id="favoriteLanguage" class="form-control">
+                        <option value="">Select</option>
+                        <option>Java</option>
+                        <option>Ruby</option>
+                        <option>C++</option>
+                        <option>Python</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-12">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check</label>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="form-row mb-0">
+                <div class="col-12 d-flex justify-content-end">
+                    <button class="btn btn-primary mr-2" type="submit">Save</button>
+                    <button class="btn btn-secondary" type="reset">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
