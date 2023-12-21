@@ -1,17 +1,18 @@
 (function () {
     function browseByAjax(hash) {
-        if (!hash) return
+        if (!hash) return;
 
-        const link = document.querySelector(`[wm-link='${hash}']`)
-        if(!link) return
+        const link = document.querySelector(`[wm-link='${hash}']`);
+        if(!link) return;
 
-        const destiny = document.querySelector('[wm-link-destiny]')
+        const destiny = document.querySelector('[wm-link-destiny]');
 
-        const url = hash.substring(1)
+        const url = hash.substring(1);
         fetch(url)
             .then(response => response.text())
             .then(html => {
-                destiny.innerHTML = html
+                destiny.innerHTML = html;
+                //eval(html.match(/\<script\>([\s\S]*)\<\/script\>/)[1]);    // Case uses tooltip
             })
     }
 
@@ -24,15 +25,15 @@
 
     function startedBrowse() {
         if (location.hash) {
-            browseByAjax(location.hash)
+            browseByAjax(location.hash);
         } else {
-            const firstLink = document.querySelector('[wm-link]')
-            browseByAjax(firstLink.hash)
+            const firstLink = document.querySelector('[wm-link]');
+            browseByAjax(firstLink.hash);
         }
     }
 
-    window.onhashchange = e => browseByAjax(location.hash)
+    window.onhashchange = e => browseByAjax(location.hash);
     
-    linksConfig()
-    startedBrowse()
-})()
+    linksConfig();
+    startedBrowse();
+})();
