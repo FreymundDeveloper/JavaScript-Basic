@@ -1,6 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const element = <h1>React</h1>;
+//import First from './components/First';
+//import Hello from './components/GoodDay';
+import Mult from './components/Multiple'
 
-ReactDOM.render(element, document.getElementById('root'));
+ReactDOM.render(
+    <React.Fragment>
+        <Mult.Hi name={"Dev"} />
+        <Mult.Bye name={"Programer"} />
+    </React.Fragment>
+, document.getElementById('root'));
