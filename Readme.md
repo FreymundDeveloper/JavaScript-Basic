@@ -15,6 +15,7 @@ Some tecnologies used:
 * Gulp(Legacy version);
 * Webpack;
 * Bootstrap;
+* React;
 * Node.
 
 Main applications present in the repository.
@@ -27,6 +28,7 @@ Main applications present in the repository.
 * /Js_Web/webpack: Basic Webpack builder configuration;
 * /Js_Web/jquery: Examples of using the main elements in JQuery manipulation;
 * /Js_Web/bootstrap: Handling basic Bootstrap templates and layouts;
+* /Modern_Web: Basic manipulation of pure React;
 * /XLSX_Orderer: Manipulation of XML files with Node's "excelJS" library.
 
 ## Running the apps
