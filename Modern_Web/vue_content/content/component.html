@@ -7,9 +7,38 @@
     <script src="/js/vue.min.js"></script>
 </head>
 <body class="basics">
+    <div id="app">
+        <hello name="Dev"></hello>
+        <count></count>
+    </div>
 
     <script>
-        // ...
+        Vue.component('hello', {
+            props: ['name'],
+            template: `
+                <div>Hello {{ name }}!</div>
+            `
+        })
+
+        Vue.component('count', {
+            data: function() {
+                return { accountant: 0 }
+            },
+            template: `
+                <div>
+                    <p>{{ accountant }}</p>
+                    <p><button @click="add">Add</button></p>
+            `,
+            methods: {
+                add() {
+                    this.accountant++
+                }
+            }
+        })
+
+        new Vue({
+            el: "#app"
+        })
     </script>
 </body>
 </html>
