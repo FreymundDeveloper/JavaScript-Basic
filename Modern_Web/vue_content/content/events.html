@@ -7,9 +7,40 @@
     <script src="/js/vue.min.js"></script>
 </head>
 <body class="basics">
+    <div id="app">
+        <p>{{ accountant }}</p>
+        <p>
+            <button v-on:click="add">More</button>
+            <button @click="accountant -= 2">More!</button>
+        </p>
+        <p @mousemove="updatePosition">
+            Location: {{x}} and {{y}}
+            <span @mousemove.stop>Nope</span>
+        </p>
+        <input type="text" @keyup.enter="alerted">
+    </div>
 
     <script>
-        // ...
+        new Vue({
+            el: "#app",
+            data: {
+                x: 0,
+                y: 0,
+                accountant: 0
+            },
+            methods: {
+                add() {
+                    this.accountant++
+                },
+                updatePosition(event) {
+                    this.x = event.clientX
+                    this.y = event.clientY
+                },
+                alerted() {
+                    alert("Enter")
+                }
+            }
+        })
     </script>
 </body>
 </html>
