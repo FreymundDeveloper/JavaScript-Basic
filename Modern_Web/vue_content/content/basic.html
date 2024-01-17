@@ -7,9 +7,33 @@
     <script src="/js/vue.min.js"></script>
 </head>
 <body class="basics">
+    <div id="app">
+        <p>1) {{  2 + 4  }}</p>
+        <p>2) {{ "test".toUpperCase() }}</p>
+        <p>3) Product: {{ name }}, R$ {{ price }}, {{ discount * 100 }}%</p>
+        <p>4) Right Hour: {{ rightHour() }}</p>
+        <p>5) Price with discount: R$ {{  priceWithDiscount  }}</p>
+    </div>
 
     <script>
-        // ...
+        new Vue({
+            el: "#app",
+            data: {
+                name: "Pen",
+                price: 6.98,
+                discount: 0.45
+            },
+            methods: {
+                rightHour() {
+                    return new Date().toLocaleString();
+                }
+            },
+            computed: {
+                priceWithDiscount() {
+                    return this.price * (1 - this.discount)
+                }
+            }
+        })
     </script>
 </body>
 </html>

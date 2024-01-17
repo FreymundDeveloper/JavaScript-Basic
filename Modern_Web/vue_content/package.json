@@ -1,17 +1,15 @@
 {
-	"name": "exercicios",
+	"name": "vue-content",
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"exercicios": "http-server ./exercicios -c-1",
-		"qrcode": "http-server ./qrcode -c-1",
-		"sales": "http-server ./sales -c-1"
+		"start": "http-server ./content -c-1"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		"http-server": "^0.11.1"
+		"http-server": "14.1.0"
 	}
 }
