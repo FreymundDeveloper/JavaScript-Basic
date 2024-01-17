@@ -7,9 +7,25 @@
     <script src="/js/vue.min.js"></script>
 </head>
 <body class="basics">
+    <div id="app">
+        <input type="text" v-model="name">
+        <div v-inverter="name"></div>
+    </div>
 
     <script>
-        // ...
+        Vue.directive("inverter", {
+            componentUpdated(el, binding) {
+                const inverter = binding.value.split("").reverse().join("");
+                el.innerHTML = inverter;
+            }
+        })
+
+        new Vue({
+            el: "#app",
+            data: {
+                name: ""
+            }
+        })
     </script>
 </body>
 </html>
