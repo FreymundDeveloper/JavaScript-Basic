@@ -7,9 +7,29 @@
     <script src="/js/vue.min.js"></script>
 </head>
 <body class="basics">
+    <div id="app">
+        <p>{{ link }}</p>
+        <p><a v-bind:href="link">GitHub</a></p>
+        <p><a :href="link">GitHub!</a></p>
+        <p>
+            <input type="text" v-model="name">
+            <span>{{ name }}</span>
+        </p>
+    </div>
 
     <script>
-        // ...
+        new Vue({
+            el: "#app",
+            data: {
+                name: "John",
+                link: "https://github.com/FreymundDeveloper"
+            },
+            watch: {
+                name(newValue) {
+                    console.log(newValue.toUpperCase());
+                }
+            }
+        })
     </script>
 </body>
 </html>
