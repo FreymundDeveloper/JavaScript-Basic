@@ -12,9 +12,17 @@
     </style>
 </head>
 <body class="basics">
+    <div id="app" @click="applyColor = !applyColor" :class="{red: applyColor}">
+        Test
+    </div>
 
     <script>
-        // ...
+        new Vue({
+            el: "#app",
+            data: {
+                applyColor: false
+            }
+        })
     </script>
 </body>
 </html>
