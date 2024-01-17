@@ -16,6 +16,7 @@ Some tecnologies used:
 * Webpack;
 * Bootstrap;
 * React;
+* Vue;
 * Node.
 
 Main applications present in the repository.
@@ -29,7 +30,8 @@ Main applications present in the repository.
 * /Js_Web/jquery: Examples of using the main elements in JQuery manipulation;
 * /Js_Web/bootstrap: Handling basic Bootstrap templates and layouts;
 * /Modern_Web/react_content: Basic manipulation of pure React;
-* /XLSX_Orderer: Manipulation of XML files with Node's "excelJS" library.
+* /Modern_Web/vue_content: Basic manipulation of Vue content;
+* /XLSX_Orderer: Manipulation of XLSX (and XML too) files with Node's "excelJS" library.
 
 ## Running the apps
 
