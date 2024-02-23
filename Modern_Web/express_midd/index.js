@@ -5,6 +5,14 @@ const callSomething = require('./mid');
 
 app.use(callSomething('Midd Call'));
 
+app.get('/clients/return', (req, res) => {
+    res.send(`Query is ${re.query.test}`);
+});
+
+app.get('/clients/:id', (req, res) => {
+    res.send(`Param is ${req.params.id}`);
+});
+
 app.get('/send', (req, res, next) => {
     console.log('Next Call')
     next();
