@@ -1,6 +1,6 @@
 ## Description
 
-Simple codes and projects based on JavaScript and his frameworks(Developed as a study).
+Simple codes and projects based on JavaScript and his frameworks(**Developed as a study**).
 
 Some tecnologies used:
 
@@ -31,6 +31,7 @@ Main applications present in the repository.
 * /Js_Web/bootstrap: Handling basic Bootstrap templates and layouts;
 * /Modern_Web/react_content: Basic manipulation of pure React;
 * /Modern_Web/vue_content: Basic manipulation of Vue content;
+* /Modern_Web/express_midd: Basic manipulation of middlewares with Express;
 * /XLSX_Orderer: Manipulation of XLSX (and XML too) files with Node's "excelJS" library.
 
 ## Running the apps
@@ -46,7 +47,7 @@ $ http-server -c-1 .
 
 #Or
 $ npm start
-$ node "js file"
+$ node "file.js"
 $ gulp
 ```
 
