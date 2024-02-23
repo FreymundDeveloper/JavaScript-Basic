@@ -3,11 +3,18 @@ const app = express();
 const bodyParser = require('body-parser');
 
 const callSomething = require('./mid');
+app.use(callSomething('Midd Call'));
 
 app.use(bodyParser.text());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(callSomething('Midd Call'));
+
+// Modulation Content
+const userApi = require('./api/user');
+require('./api/product')(app, 'With param');
+
+app.post('/user', userApi.save);
+app.get('/user', userApi.take);
 
 // Parms Content
 app.get('/clients/return', (req, res) => {
