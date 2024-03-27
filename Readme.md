@@ -32,6 +32,7 @@ Main applications present in the repository.
 * /Modern_Web/react_content: Basic manipulation of pure React;
 * /Modern_Web/vue_content: Basic manipulation of Vue content;
 * /Modern_Web/express_midd: Basic manipulation of middlewares with Express;
+* /Typescript_Basic: Using JavaScript tools and features converted to TypeScript;
 * /XLSX_Orderer: Manipulation of XLSX (and XML too) files with Node's "excelJS" library.
 
 ## Running the apps
@@ -47,6 +48,7 @@ $ http-server -c-1 .
 
 #Or
 $ npm start
+$ npm run build
 $ node "file.js"
 $ gulp
 ```
