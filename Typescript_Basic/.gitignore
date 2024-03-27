@@ -1,3 +1,4 @@
 /basic/node_modules
 /gulp-integration/node_modules
+/gulp-integration/dist
 /webpack-integration/node_modules

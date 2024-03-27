@@ -5,16 +5,24 @@ import browserify from 'browserify';
 import source from 'vinyl-source-stream';
 import tsify from 'tsify';
  
-function clearDist(cb) { 
-    cb() 
+function clearDist() { 
+    return del(['dist'])
 }
  
-function copyHTML(cb) { 
-    cb() 
+function copyHTML() { 
+    return src('public/**/*')
+        .pipe(dest('dist')) 
 }
  
-function generateJS(cb) { 
-    cb() 
+function generateJS() { 
+    return browserify({
+        basedir: '.',
+        entries: ['src/main.ts']
+    })
+    .plugin(tsify)
+    .bundle()
+    .pipe(source('app.js'))
+    .pipe(dest('dist'))
 }
  
 export default series(clearDist, parallel(copyHTML, generateJS))
