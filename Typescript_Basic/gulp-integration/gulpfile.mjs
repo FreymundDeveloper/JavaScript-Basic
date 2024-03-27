@@ -4,6 +4,8 @@ import { deleteAsync as del } from 'del';
 import browserify from 'browserify';
 import source from 'vinyl-source-stream';
 import tsify from 'tsify';
+import uglify from 'gulp-uglify';
+import rename from 'gulp-rename';
  
 function clearDist() { 
     return del(['dist'])
@@ -24,5 +26,12 @@ function generateJS() {
     .pipe(source('app.js'))
     .pipe(dest('dist'))
 }
+
+function generateJSProduction() {
+    return src('dist/app.js')
+        .pipe(rename('app.min.js'))
+        .pipe(uglify())
+        .pipe(dest('dist'))
+}
  
-export default series(clearDist, parallel(copyHTML, generateJS))
+export default series(clearDist, parallel(copyHTML, generateJS), generateJSProduction)
